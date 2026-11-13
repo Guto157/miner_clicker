@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#111827">
+<title>Miner Clicker</title>
+<style>
+:root{color-scheme:dark;--bg:#10151e;--panel:#1b2431;--line:#344154;--muted:#9aa8b9;--gold:#f4c15d;--green:#62d69a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#34445a 0,#151d29 48%,#0d121a 100%);color:#f3f6fa;font-family:system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh;padding:16px}
+main{max-width:760px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;margin:4px 0 14px}.brand{font-weight:900;letter-spacing:1.5px;font-size:19px}.brand span{color:var(--gold)}.sub{font-size:11px;color:var(--muted);letter-spacing:2px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.stat,.panel{background:linear-gradient(145deg,#222d3c,#18212d);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 8px 22px #0003}.stat small{display:block;color:var(--muted);font-size:11px}.stat strong{font-size:clamp(16px,4vw,22px);font-variant-numeric:tabular-nums}
+.mine{padding:16px;text-align:center;position:relative;overflow:hidden}.stage-label{color:var(--muted);font-size:11px;letter-spacing:2px}.material-name{font-size:clamp(23px,6vw,32px);font-weight:900;margin:4px 0}.tier{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px}
+.rock-button{display:block;margin:12px auto 8px;width:min(62vw,230px);height:min(62vw,230px);max-height:230px;max-width:230px;border:0;background:transparent;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 14px 14px #0008);transition:transform .08s}.rock-button:active{transform:scale(.94)}.rock-button svg{width:100%;height:100%;overflow:visible}.hp-line{height:10px;background:#0d131c;border:1px solid #3b4757;border-radius:20px;overflow:hidden;margin:10px auto 5px;max-width:440px}.hp-fill{height:100%;width:100%;background:linear-gradient(90deg,#58bd82,#b4e477);transition:width .12s}.progress{color:var(--muted);font-size:12px}.pickaxe-wrap{display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0}.pickaxe-wrap svg{width:56px;height:56px}.pick-name{font-weight:800}.pick-info{font-size:11px;color:var(--muted)}
+.upgrades{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.upgrade{background:#202b39;border:1px solid #3a485a;border-radius:12px;padding:12px 7px;color:white;cursor:pointer;min-height:92px}.upgrade:disabled{opacity:.4;cursor:not-allowed}.upgrade b{display:block;font-size:14px}.upgrade small{display:block;color:var(--muted);font-size:10px;margin:4px 0}.cost{color:var(--gold);font-size:11px;font-weight:800}.section-title{font-size:13px;letter-spacing:1.4px;color:#b7c3d2;margin:16px 2px 8px}.materials{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.mat{background:#17212d;border:1px solid #2c394a;border-radius:9px;padding:7px 3px;text-align:center;min-width:0}.mat svg{width:36px;height:36px}.mat span{display:block;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#c5cfda}.mat.locked{filter:grayscale(1);opacity:.3}.mat.current{border-color:var(--gold);background:#3a3020}.foot{text-align:center;color:#728196;font-size:10px;margin:18px 0 6px}
+@media(min-width:600px){body{padding:24px}.stats{gap:12px}.stat{padding:16px}.materials{grid-template-columns:repeat(10,1fr)}.upgrade{min-height:104px}}
+</style>
+</head>
+<body><main>
+<header class="top"><div><div class="brand">MINER <span>CLICKER</span></div><div class="sub">EVOLUA • MINERE • CONQUISTE</div></div><div class="sub">50 MATERIAIS</div></header>
+<section class="stats">
+<div class="stat"><small>MINÉRIO ACUMULADO</small><strong id="ore">0</strong></div>
+<div class="stat"><small>TOTAL MINERADO</small><strong id="total">0</strong></div>
+<div class="stat"><small>ETAPA</small><strong id="stage">1 / 50</strong></div>
+</section>
+<section class="panel mine">
+<div class="stage-label">MATERIAL ATUAL</div><div class="material-name" id="materialName">Madeira</div><div class="tier" id="tier">Comum • Nível 1</div>
+<button class="rock-button" id="mineBtn" aria-label="Bater com a picareta para minerar"><svg id="rock" viewBox="0 0 220 220"></svg></button>
+<div class="hp-line"><div class="hp-fill" id="hpFill"></div></div><div class="progress" id="progress">Resistência: 10 / 10</div>
+<div class="pickaxe-wrap"><svg id="pickaxe" viewBox="0 0 100 100"></svg><div><div class="pick-name" id="pickName">Picareta de Madeira</div><div class="pick-info" id="pickInfo">Dano 1 • Velocidade normal</div></div></div>
+</section>
+<div class="section-title">MELHORIAS DA PICARETA</div>
+<section class="upgrades">
+<button class="upgrade" id="damageBtn"><b>⚒ Dano</b><small>Aumenta o dano por toque</small><span class="cost" id="damageCost">Custo: 10</span></button>
+<button class="upgrade" id="speedBtn"><b>⚡ Velocidade</b><small>Minere mais rápido</small><span class="cost" id="speedCost">Custo: 15</span></button>
+<button class="upgrade" id="pickBtn"><b>⛏ Evoluir</b><small>Nova picareta mais forte</small><span class="cost" id="pickCost">Custo: 30</span></button>
+</section>
+<div class="section-title">JORNADA DOS 50 MATERIAIS</div><section class="materials" id="materials"></section>
+<div class="foot">Seu progresso fica salvo automaticamente neste aparelho.</div>
+</main>
+<script>
+const materials=[
+["Madeira","#9b6238","#d6a06a"],["Pedra","#737d88","#c0c8cf"],["Areia","#c8ad70","#f1d99b"],["Argila","#a85d48","#df9676"],["Carvão","#34383e","#777d84"],["Cobre","#a85e36","#e5a06b"],["Ferro","#89939b","#d7dce0"],["Estanho","#aeb7b8","#e5eeee"],["Bronze","#95602e","#d8a35b"],["Prata","#aeb8c8","#f4f6ff"],["Ouro","#c18b22","#ffe078"],["Quartzo","#c9c2b9","#fff6e8"],["Cristal","#75c8d8","#d8ffff"],["Ametista","#7545a8","#d5a6ff"],["Esmeralda","#16875d","#8dffc0"],["Safira","#2857bd","#9ac6ff"],["Rubi","#ad263c","#ff9aa7"],["Diamante","#65c8df","#e4ffff"],["Platina","#8b9eaa","#f2fbff"],["Titânio","#667b91","#c9d9e8"],["Ósmio","#596c87","#b3c8eb"],["Irídio","#9b83bd","#eadbff"],["Obsidiana","#29243e","#8b70b5"],["Cristal Negro","#171927","#777aab"],["Cristal de Energia","#25a8a0","#b2fff1"],["Metal Estelar","#4b628e","#b8d4ff"],["Prata Lunar","#8792c5","#e4e8ff"],["Ouro Celestial","#c49b42","#fff0a8"],["Diamante Negro","#202b42","#8094c9"],["Cristal Arcano","#7148ae","#e2b8ff"],["Adamantita","#657c71","#c4f2cf"],["Mithril","#4c9da7","#c6ffff"],["Oricalco","#a36a3d","#ffd19a"],["Aço de Dragão","#7a3f43","#f39a83"],["Cristal de Dragão","#b74369","#ffb4d0"],["Núcleo de Fênix","#d45b20","#ffe18b"],["Essência Elemental","#3b9c85","#c2ffe2"],["Metal Divino","#b3a36c","#fff4c4"],["Cristal Eterno","#71b6d5","#e5ffff"],["Fragmento de Deus","#c6b6e7","#ffffff"],["Matéria Cósmica","#343c76","#a9a6ff"],["Energia Estelar","#3e9cc7","#c4f5ff"],["Matéria Dimensional","#7049a0","#e1b5ff"],["Cristal do Infinito","#4a83c8","#d0e9ff"],["Núcleo Galáctico","#9d4e9f","#ffc7ff"],["Essência Universal","#438e9b","#d1ffff"],["Matéria Primordial","#967b4e","#fff0bc"],["Energia do Caos","#9b3659","#ff9fbd"],["Cristal da Criação","#b7a2e8","#fffaff"],["Elemento Absoluto","#e2c66e","#ffffff"]
+];
+const pickaxes=[["Madeira","#98633e"],["Pedra","#858d96"],["Cobre","#bd7547"],["Ferro","#b9c4cc"],["Ouro","#f0c34e"],["Diamante","#73d8ed"],["Netherita","#665477"],["Estelar","#7b8ee0"],["Divina","#e6d18c"],["Cósmica","#ba80ef"]];
+const $=id=>document.getElementById(id);let s=load();
+function load(){try{return Object.assign({ore:0,total:0,index:0,hp:10,damage:1,speed:0,pick:0,damageLv:0,speedLv:0},JSON.parse(localStorage.getItem("minerClickerSave")||"{}"))}catch(e){return {ore:0,total:0,index:0,hp:10,damage:1,speed:0,pick:0,damageLv:0,speedLv:0}}}
+function save(){localStorage.setItem("minerClickerSave",JSON.stringify(s))}
+function fmt(n){return Math.floor(n).toLocaleString("pt-BR")}
+function svgRock(i){let [name,a,b]=materials[i],seed=i+1;let points=[];for(let j=0;j<9;j++){let ang=(-Math.PI/2)+j*Math.PI*2/9;let r=70+((j*17+seed*13)%23);points.push((110+Math.cos(ang)*r)+","+(110+Math.sin(ang)*r))}let gem=i>=11?'<path d="M110 52 L145 92 126 145 91 145 72 92Z" fill="url(#gem)" stroke="'+b+'" stroke-width="4"/><path d="M110 52 110 145 72 92Z" fill="#fff" opacity=".18"/>':'';return '<defs><linearGradient id="rockg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="'+b+'"/><stop offset="1" stop-color="'+a+'"/></linearGradient><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop stop-color="'+b+'"/><stop offset="1" stop-color="'+a+'"/></linearGradient></defs><ellipse cx="110" cy="187" rx="68" ry="12" fill="#000" opacity=".3"/><polygon points="'+points.join(" ")+'" fill="url(#rockg)" stroke="'+b+'" stroke-width="5" stroke-linejoin="round"/><path d="M62 93l24-25 30 8 18-10 27 32-18 18-35-6-28 17Z" fill="'+b+'" opacity=".2"/>'+gem+'<path d="M58 135l20-8m68-45 15 13" stroke="'+b+'" stroke-width="5" opacity=".6"/>'}
+function svgPick(i){let c=pickaxes[i][1];return '<g stroke-linejoin="round"><path d="M47 43l10 7-30 43-10-7z" fill="#9b6339" stroke="#392b25" stroke-width="5"/><path d="M20 38l9-15 22 7 17-13 18 7-13 21-22 3-17 9z" fill="'+c+'" stroke="#202a35" stroke-width="6"/><path d="M29 26l22 7 17-13" fill="none" stroke="#fff" stroke-width="4" opacity=".4"/></g>'}
+function render(){let m=materials[s.index],maxHp=10*Math.pow(1.48,s.index);$("ore").textContent=fmt(s.ore);$("total").textContent=fmt(s.total);$("stage").textContent=(s.index+1)+" / 50";$("materialName").textContent=m[0];$("tier").textContent=(s.index<10?"Básico":s.index<20?"Valioso":s.index<30?"Raro":s.index<40?"Épico":"Lendário")+" • Nível "+(s.index+1);$("rock").innerHTML=svgRock(s.index);$("hpFill").style.width=Math.max(0,s.hp/maxHp*100)+"%";$("progress").textContent="Resistência: "+fmt(s.hp)+" / "+fmt(maxHp);$("pickaxe").innerHTML=svgPick(s.pick);$("pickName").textContent="Picareta "+pickaxes[s.pick][0];$("pickInfo").textContent="Dano "+fmt(s.damage)+" • Intervalo "+(Math.max(90,550-s.speed*45))+" ms";let dc=Math.floor(10*Math.pow(1.72,s.damageLv)),sc=Math.floor(15*Math.pow(1.8,s.speedLv)),pc=Math.floor(30*Math.pow(3.1,s.pick));$("damageCost").textContent="Custo: "+fmt(dc)+" minério";$("speedCost").textContent="Custo: "+fmt(sc)+" minério";$("pickCost").textContent=s.pick===9?"Nível máximo":"Custo: "+fmt(pc)+" minério";$("damageBtn").disabled=s.ore<dc;$("speedBtn").disabled=s.ore<sc;$("pickBtn").disabled=s.pick===9||s.ore<pc;$("materials").innerHTML=materials.map((x,i)=>'<div class="mat '+(i>s.index?"locked":i===s.index?"current":"")+'">'+miniRock(i)+'<span>'+x[0]+'</span></div>').join("");}
+function miniRock(i){let [n,a,b]=materials[i];return '<svg viewBox="0 0 100 100"><path d="M12 55L30 20 65 15 88 48 72 82 30 85Z" fill="'+a+'" stroke="'+b+'" stroke-width="5"/>'+(i>=11?'<path d="M50 25L70 50 52 78 30 50Z" fill="'+b+'"/>':'')+'</svg>'}
+function mine(){let now=Date.now();if(now-(s.last||0)<Math.max(90,550-s.speed*45))return;s.last=now;let maxHp=10*Math.pow(1.48,s.index);s.hp-=s.damage;s.ore+=1;s.total+=1;if(s.hp<=0){s.index=Math.min(49,s.index+1);s.hp=10*Math.pow(1.48,s.index)}save();render()}
+$("mineBtn").addEventListener("click",mine);
+$("damageBtn").onclick=()=>{let c=Math.floor(10*Math.pow(1.72,s.damageLv));if(s.ore>=c){s.ore-=c;s.damageLv++;s.damage=Math.floor(1+Math.pow(s.damageLv+1,1.48));save();render()}};
+$("speedBtn").onclick=()=>{let c=Math.floor(15*Math.pow(1.8,s.speedLv));if(s.ore>=c){s.ore-=c;s.speedLv++;s.speed=s.speedLv;save();render()}};
+$("pickBtn").onclick=()=>{let c=Math.floor(30*Math.pow(3.1,s.pick));if(s.pick<9&&s.ore>=c){s.ore-=c;s.pick++;s.damage+=Math.max(1,s.pick*2);save();render()}};
+render();
+</script></body></html>
