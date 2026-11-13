@@ -50,6 +50,60 @@ body{background:radial-gradient(ellipse at 50% 0%,#405574 0,#202c3c 32%,#111923 
 .mat:not(.locked){opacity:1}.mat.locked{opacity:.26}
 .foot{padding:10px 0;border-top:1px solid #ffffff10}
 
+
+/* REFORMA VISUAL: mina, materiais e equipamentos */
+:root{--gold:#ffd36e;--gold2:#fff0b5;--ice:#8de8ff}
+body{background:radial-gradient(ellipse at 50% -12%,#627b99 0,#293b52 27%,#111c2b 68%,#070c14 100%);padding:12px}
+main{max-width:820px}
+.top{margin-bottom:16px;padding:9px 5px 15px;border-bottom:1px solid #9bb9d333}
+.brand{font-size:clamp(22px,5vw,29px);letter-spacing:2px}
+.sub{font-weight:800}
+.stats{gap:9px}
+.stat{border-radius:16px;padding:13px 11px;background:linear-gradient(145deg,#344b65,#1a293b 72%);border:1px solid #7892ae;box-shadow:0 10px 24px #0006,inset 0 1px #ffffff25}
+.stat:before{content:"";display:block;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:-13px -11px 10px}
+.stat small{font-size:9px;letter-spacing:1px;font-weight:900}
+.stat strong{font-size:clamp(17px,4.4vw,25px);color:#fff2c7}
+.mine{padding:18px 14px 15px;border-radius:22px;background:radial-gradient(ellipse at 50% 28%,#49617d 0,#293d55 42%,#172638 100%);border:1px solid #91a9c4;box-shadow:0 18px 38px #0007,inset 0 1px #ffffff35}
+.stage-label{font-size:10px;letter-spacing:2.5px;color:#d4e3f3}
+.material-name{font-size:clamp(25px,7vw,36px);margin:5px 0 1px;color:#fff;text-shadow:0 3px 0 #0004,0 0 22px #b8dfff55}
+.tier{font-size:10px;text-shadow:0 1px 8px #000}
+.rock-button{width:min(68vw,260px);height:min(68vw,260px);max-width:260px;max-height:260px;margin:7px auto 3px;filter:drop-shadow(0 18px 14px #000b)}
+.rock-button svg{position:relative;z-index:1}
+.rock-button:active{transform:scale(.91) rotate(-2deg)}
+.rock-button.hit{animation:hit .19s ease-out}
+@keyframes hit{0%{filter:brightness(1.8) drop-shadow(0 0 18px #fff)}100%{filter:brightness(1) drop-shadow(0 18px 14px #000b)}}
+.cooldown{position:absolute;z-index:3;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .1s}
+.cooldown.active{opacity:1}
+.cooldown:before{content:"";position:absolute;width:76px;height:76px;border-radius:50%;background:#101b2bdc;border:1px solid #d6efff66;box-shadow:0 5px 22px #0008,inset 0 1px #ffffff25}
+.cooldown svg{position:absolute;width:88px;height:88px;transform:rotate(-90deg)}
+.cooldown circle{fill:none;stroke:#ffffff25;stroke-width:5}
+.cooldown .ring{stroke:#ffe08a;stroke-linecap:round;stroke-dasharray:163.36;stroke-dashoffset:0;filter:drop-shadow(0 0 4px #ffdb75)}
+.cooldown b{position:relative;color:#fff4c9;font-size:15px;font-variant-numeric:tabular-nums;text-shadow:0 2px 5px #000}
+.hp-line{height:14px;border:1px solid #8ca3bc;background:#101a27;box-shadow:inset 0 3px 6px #000b;margin-top:12px}
+.hp-fill{background:linear-gradient(90deg,#31d28b,#b5ed76,#ffe17a);box-shadow:0 0 15px #70e9a9aa}
+.progress{font-size:11px;color:#d5e3f2;font-weight:700}
+.pickaxe-wrap{max-width:380px;margin:14px auto 0;padding:9px 15px;border-radius:16px;background:linear-gradient(145deg,#182638dd,#0d1724dd);border:1px solid #7189a4;box-shadow:inset 0 1px #ffffff24,0 7px 16px #0004}
+.pickaxe-wrap svg{width:66px;height:66px;filter:drop-shadow(0 4px 5px #000b)}
+.pick-name{font-size:15px;color:#fff0c2}
+.pick-info{font-size:11px}
+.section-title{margin-top:19px;font-size:12px;letter-spacing:1.7px;color:#e4edf8}
+.upgrades{gap:9px}
+.upgrade{min-height:112px;padding:11px 6px;border-radius:15px;background:linear-gradient(155deg,#405873,#1a2a3d 75%);border:1px solid #7891ac;box-shadow:0 8px 16px #0005,inset 0 1px #ffffff2b}
+.upgrade b{font-size:13px;text-shadow:0 2px 5px #000}
+.upgrade small{font-size:10px;color:#d1deeb}
+.upgrade:not(:disabled){border-bottom:3px solid #b18a43}
+.upgrade:not(:disabled):active{transform:translateY(3px);box-shadow:0 3px 8px #0006}
+.cost{background:#111b2acc;border:1px solid #a9843c;color:#ffe39a;font-size:10px}
+.materials{gap:8px}
+.mat{position:relative;overflow:hidden;border-radius:12px;padding:7px 3px 8px;background:linear-gradient(145deg,#30465f,#142235);border:1px solid #526b86;box-shadow:0 5px 10px #0004,inset 0 1px #ffffff20}
+.mat:after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,#ffffff12,transparent 42%);pointer-events:none}
+.mat svg{width:42px;height:42px;filter:drop-shadow(0 4px 3px #0009)}
+.mat span{font-size:9px;font-weight:800;color:#e1ebf6}
+.mat.current{border:1px solid #ffdf82;background:linear-gradient(145deg,#68542e,#2d2a25);box-shadow:0 0 0 1px #ffdf8244,0 0 18px #ffca4b55,inset 0 1px #fff5}
+.mat.locked{opacity:.2;filter:grayscale(1)}
+.foot{font-size:10px;color:#9aacc0}
+@media(max-width:380px){.stat{padding:11px 7px}.stat:before{margin:-11px -7px 8px}.upgrade{min-height:108px}.mat svg{width:36px;height:36px}}
+
 </style>
 </head>
 <body><main>
@@ -61,7 +115,7 @@ body{background:radial-gradient(ellipse at 50% 0%,#405574 0,#202c3c 32%,#111923 
 </section>
 <section class="panel mine">
 <div class="stage-label">MATERIAL ATUAL</div><div class="material-name" id="materialName">Madeira</div><div class="tier" id="tier">Comum • Nível 1</div>
-<button class="rock-button" id="mineBtn" aria-label="Bater com a picareta para minerar"><svg id="rock" viewBox="0 0 220 220"></svg></button>
+<button class="rock-button" id="mineBtn" aria-label="Bater com a picareta para minerar"><svg id="rock" viewBox="0 0 220 220"></svg><div class="cooldown" id="cooldown"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26"/><circle class="ring" id="coolRing" cx="30" cy="30" r="26"/></svg><b id="coolText">0,55s</b></div></button>
 <div class="hp-line"><div class="hp-fill" id="hpFill"></div></div><div class="progress" id="progress">Resistência: 10 / 10</div>
 <div class="pickaxe-wrap"><svg id="pickaxe" viewBox="0 0 100 100"></svg><div><div class="pick-name" id="pickName">Picareta de Madeira</div><div class="pick-info" id="pickInfo">Dano 1 • Velocidade normal</div></div></div>
 </section>
@@ -79,18 +133,20 @@ const materials=[
 ["Madeira","#9b6238","#d6a06a"],["Pedra","#737d88","#c0c8cf"],["Areia","#c8ad70","#f1d99b"],["Argila","#a85d48","#df9676"],["Carvão","#34383e","#777d84"],["Cobre","#a85e36","#e5a06b"],["Ferro","#89939b","#d7dce0"],["Estanho","#aeb7b8","#e5eeee"],["Bronze","#95602e","#d8a35b"],["Prata","#aeb8c8","#f4f6ff"],["Ouro","#c18b22","#ffe078"],["Quartzo","#c9c2b9","#fff6e8"],["Cristal","#75c8d8","#d8ffff"],["Ametista","#7545a8","#d5a6ff"],["Esmeralda","#16875d","#8dffc0"],["Safira","#2857bd","#9ac6ff"],["Rubi","#ad263c","#ff9aa7"],["Diamante","#65c8df","#e4ffff"],["Platina","#8b9eaa","#f2fbff"],["Titânio","#667b91","#c9d9e8"],["Ósmio","#596c87","#b3c8eb"],["Irídio","#9b83bd","#eadbff"],["Obsidiana","#29243e","#8b70b5"],["Cristal Negro","#171927","#777aab"],["Cristal de Energia","#25a8a0","#b2fff1"],["Metal Estelar","#4b628e","#b8d4ff"],["Prata Lunar","#8792c5","#e4e8ff"],["Ouro Celestial","#c49b42","#fff0a8"],["Diamante Negro","#202b42","#8094c9"],["Cristal Arcano","#7148ae","#e2b8ff"],["Adamantita","#657c71","#c4f2cf"],["Mithril","#4c9da7","#c6ffff"],["Oricalco","#a36a3d","#ffd19a"],["Aço de Dragão","#7a3f43","#f39a83"],["Cristal de Dragão","#b74369","#ffb4d0"],["Núcleo de Fênix","#d45b20","#ffe18b"],["Essência Elemental","#3b9c85","#c2ffe2"],["Metal Divino","#b3a36c","#fff4c4"],["Cristal Eterno","#71b6d5","#e5ffff"],["Fragmento de Deus","#c6b6e7","#ffffff"],["Matéria Cósmica","#343c76","#a9a6ff"],["Energia Estelar","#3e9cc7","#c4f5ff"],["Matéria Dimensional","#7049a0","#e1b5ff"],["Cristal do Infinito","#4a83c8","#d0e9ff"],["Núcleo Galáctico","#9d4e9f","#ffc7ff"],["Essência Universal","#438e9b","#d1ffff"],["Matéria Primordial","#967b4e","#fff0bc"],["Energia do Caos","#9b3659","#ff9fbd"],["Cristal da Criação","#b7a2e8","#fffaff"],["Elemento Absoluto","#e2c66e","#ffffff"]
 ];
 const pickaxes=[["Madeira","#98633e"],["Pedra","#858d96"],["Cobre","#bd7547"],["Ferro","#b9c4cc"],["Ouro","#f0c34e"],["Diamante","#73d8ed"],["Netherita","#665477"],["Estelar","#7b8ee0"],["Divina","#e6d18c"],["Cósmica","#ba80ef"]];
-const $=id=>document.getElementById(id);let s=load();
+const $=id=>document.getElementById(id);let s=load();let cooldownUntil=0;let cooldownDuration=550;
 function load(){try{return Object.assign({ore:0,total:0,index:0,hp:10,damage:1,speed:0,pick:0,damageLv:0,speedLv:0},JSON.parse(localStorage.getItem("minerClickerSave")||"{}"))}catch(e){return {ore:0,total:0,index:0,hp:10,damage:1,speed:0,pick:0,damageLv:0,speedLv:0}}}
 function save(){localStorage.setItem("minerClickerSave",JSON.stringify(s))}
 function fmt(n){return Math.floor(n).toLocaleString("pt-BR")}
-function svgRock(i){let [name,a,b]=materials[i],seed=i+1;let points=[];for(let j=0;j<9;j++){let ang=(-Math.PI/2)+j*Math.PI*2/9;let r=70+((j*17+seed*13)%23);points.push((110+Math.cos(ang)*r)+","+(110+Math.sin(ang)*r))}let gem=i>=11?'<path d="M110 52 L145 92 126 145 91 145 72 92Z" fill="url(#gem)" stroke="'+b+'" stroke-width="4"/><path d="M110 52 110 145 72 92Z" fill="#fff" opacity=".18"/>':'';return '<defs><linearGradient id="rockg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="'+b+'"/><stop offset="1" stop-color="'+a+'"/></linearGradient><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop stop-color="'+b+'"/><stop offset="1" stop-color="'+a+'"/></linearGradient></defs><ellipse cx="110" cy="187" rx="68" ry="12" fill="#000" opacity=".3"/><polygon points="'+points.join(" ")+'" fill="url(#rockg)" stroke="'+b+'" stroke-width="5" stroke-linejoin="round"/><path d="M62 93l24-25 30 8 18-10 27 32-18 18-35-6-28 17Z" fill="'+b+'" opacity=".2"/>'+gem+'<path d="M58 135l20-8m68-45 15 13" stroke="'+b+'" stroke-width="5" opacity=".6"/>'}
-function svgPick(i){let c=pickaxes[i][1];return '<g stroke-linejoin="round"><path d="M47 43l10 7-30 43-10-7z" fill="#9b6339" stroke="#392b25" stroke-width="5"/><path d="M20 38l9-15 22 7 17-13 18 7-13 21-22 3-17 9z" fill="'+c+'" stroke="#202a35" stroke-width="6"/><path d="M29 26l22 7 17-13" fill="none" stroke="#fff" stroke-width="4" opacity=".4"/></g>'}
-function render(){let m=materials[s.index],maxHp=10*Math.pow(1.48,s.index);$("ore").textContent=fmt(s.ore);$("total").textContent=fmt(s.total);$("stage").textContent=(s.index+1)+" / 50";$("materialName").textContent=m[0];$("tier").textContent=(s.index<10?"Básico":s.index<20?"Valioso":s.index<30?"Raro":s.index<40?"Épico":"Lendário")+" • Nível "+(s.index+1);$("rock").innerHTML=svgRock(s.index);$("hpFill").style.width=Math.max(0,s.hp/maxHp*100)+"%";$("progress").textContent="Resistência: "+fmt(s.hp)+" / "+fmt(maxHp);$("pickaxe").innerHTML=svgPick(s.pick);$("pickName").textContent="Picareta "+pickaxes[s.pick][0];const tempo=Math.max(90,550-s.speed*45)/1000;$("pickInfo").textContent="Dano "+fmt(s.damage)+" • 1 toque a cada "+tempo.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+" s";let dc=Math.floor(10*Math.pow(1.72,s.damageLv)),sc=Math.floor(15*Math.pow(1.8,s.speedLv)),pc=Math.floor(30*Math.pow(3.1,s.pick));$("damageCost").textContent="Custo: "+fmt(dc)+" minério";$("speedCost").textContent="Custo: "+fmt(sc)+" minério";$("pickCost").textContent=s.pick===9?"Nível máximo":"Custo: "+fmt(pc)+" minério";$("damageBtn").disabled=s.ore<dc;$("speedBtn").disabled=s.ore<sc;$("pickBtn").disabled=s.pick===9||s.ore<pc;$("materials").innerHTML=materials.map((x,i)=>'<div class="mat '+(i>s.index?"locked":i===s.index?"current":"")+'">'+miniRock(i)+'<span>'+x[0]+'</span></div>').join("");}
+function svgRock(i){let [name,a,b]=materials[i],seed=i+1;let pts=[];for(let j=0;j<11;j++){let ang=-Math.PI/2+j*Math.PI*2/11,r=69+((j*19+seed*13)%25);pts.push((110+Math.cos(ang)*r)+","+(110+Math.sin(ang)*r))}let crystal=i>=11,glow=i>=24;let shards=crystal?'<path d="M110 43L145 91 128 151 91 151 70 91Z" fill="url(#gem)" stroke="'+b+'" stroke-width="3"/><path d="M110 43L110 151 70 91Z" fill="#fff" opacity=".24"/><path d="M110 43L119 91 145 91M91 151L110 91 128 151" fill="none" stroke="#fff" stroke-width="2" opacity=".55"/>':'<path d="M70 83L99 66 125 76 153 95 128 111 96 105Z" fill="'+b+'" opacity=".25"/><path d="M64 126L91 111 112 124 145 112" fill="none" stroke="'+b+'" stroke-width="5" opacity=".45"/>';return '<defs><linearGradient id="rockg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="'+b+'"/><stop offset=".48" stop-color="'+a+'"/><stop offset="1" stop-color="#101827"/></linearGradient><linearGradient id="gem" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".25" stop-color="'+b+'"/><stop offset="1" stop-color="'+a+'"/></linearGradient><radialGradient id="aura"><stop stop-color="'+b+'" stop-opacity=".5"/><stop offset="1" stop-color="'+b+'" stop-opacity="0"/></radialGradient></defs><circle cx="110" cy="108" r="98" fill="url(#aura)" opacity="'+(glow?'.65':'.25')+'"/><ellipse cx="110" cy="190" rx="68" ry="11" fill="#000" opacity=".4"/><polygon points="'+pts.join(" ")+'" fill="url(#rockg)" stroke="'+b+'" stroke-width="5" stroke-linejoin="round"/><path d="M55 103L76 68 111 58 139 74 165 108 148 144 110 163 72 143Z" fill="none" stroke="#fff" stroke-width="2" opacity=".15"/>'+shards+'<path d="M52 105l14-28 23-13M147 151l20-25" stroke="#fff" stroke-width="4" opacity=".18" stroke-linecap="round"/>'}
+function svgPick(i){let c=pickaxes[i][1];let heads=[ '<path d="M15 28L24 14 49 22 68 10 88 20 78 43 53 48 29 42Z"/>','<path d="M13 31L25 12 49 20 70 9 91 24 77 48 49 44 27 54Z"/>','<path d="M9 28L24 10 48 21 72 8 93 24 78 47 52 44 27 53Z"/>','<path d="M8 30L23 8 48 19 72 7 94 22 80 49 51 45 26 56Z"/>','<path d="M8 28L24 7 48 18 72 5 96 22 81 49 52 45 26 55Z"/>','<path d="M7 29L23 5 48 18 72 4 97 22 81 51 51 45 25 57Z"/>','<path d="M7 29L22 5 47 17 73 4 97 21 82 51 51 45 25 57Z"/>','<path d="M6 29L22 4 47 17 73 3 98 21 82 52 51 45 24 58Z"/>','<path d="M5 28L22 3 47 16 73 2 99 20 83 52 51 45 24 58Z"/>','<path d="M4 28L21 2 47 15 74 1 100 20 84 53 51 45 23 59Z"/>'];let head=heads[i]||heads[0];let extra=i>=4?'<path d="M24 15L47 25 72 12 88 23" fill="none" stroke="#fff" stroke-width="3" opacity=".65"/>':'';let aura=i>=5?'<path d="M12 30L50 5 96 25 83 58 48 51Z" fill="none" stroke="'+c+'" stroke-width="2" opacity=".5"/>':'';return '<defs><linearGradient id="axeMetal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".35" stop-color="'+c+'"/><stop offset="1" stop-color="#26364a"/></linearGradient><linearGradient id="handle" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d6a16a"/><stop offset="1" stop-color="#593821"/></linearGradient></defs><g stroke-linejoin="round">'+aura+'<path d="M48 40L59 47 30 94 18 87Z" fill="url(#handle)" stroke="#30251f" stroke-width="4"/><path d="M24 77L38 86M33 63L46 72" stroke="#f1c18a" stroke-width="3" opacity=".55"/><g fill="url(#axeMetal)" stroke="#182638" stroke-width="5">'+head+'</g>'+extra+'<path d="M24 16L48 24 72 11" fill="none" stroke="#fff" stroke-width="3" opacity=".5"/></g>'}
+function render(){let m=materials[s.index],maxHp=10*Math.pow(1.48,s.index);cooldownDuration=Math.max(90,550-s.speed*45);$("ore").textContent=fmt(s.ore);$("total").textContent=fmt(s.total);$("stage").textContent=(s.index+1)+" / 50";$("materialName").textContent=m[0];$("tier").textContent=(s.index<10?"Básico":s.index<20?"Valioso":s.index<30?"Raro":s.index<40?"Épico":"Lendário")+" • Nível "+(s.index+1);$("rock").innerHTML=svgRock(s.index);$("hpFill").style.width=Math.max(0,s.hp/maxHp*100)+"%";$("progress").textContent="Resistência: "+fmt(s.hp)+" / "+fmt(maxHp);$("pickaxe").innerHTML=svgPick(s.pick);$("pickName").textContent="Picareta "+pickaxes[s.pick][0];const tempo=Math.max(90,550-s.speed*45)/1000;$("pickInfo").textContent="Dano "+fmt(s.damage)+" • 1 toque a cada "+tempo.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+" s";let dc=Math.floor(10*Math.pow(1.72,s.damageLv)),sc=Math.floor(15*Math.pow(1.8,s.speedLv)),pc=Math.floor(30*Math.pow(3.1,s.pick));$("damageCost").textContent="Custo: "+fmt(dc)+" minério";$("speedCost").textContent="Custo: "+fmt(sc)+" minério";$("pickCost").textContent=s.pick===9?"Nível máximo":"Custo: "+fmt(pc)+" minério";$("damageBtn").disabled=s.ore<dc;$("speedBtn").disabled=s.ore<sc;$("pickBtn").disabled=s.pick===9||s.ore<pc;$("materials").innerHTML=materials.map((x,i)=>'<div class="mat '+(i>s.index?"locked":i===s.index?"current":"")+'">'+miniRock(i)+'<span>'+x[0]+'</span></div>').join("");}
 function miniRock(i){let [n,a,b]=materials[i];return '<svg viewBox="0 0 100 100"><path d="M12 55L30 20 65 15 88 48 72 82 30 85Z" fill="'+a+'" stroke="'+b+'" stroke-width="5"/>'+(i>=11?'<path d="M50 25L70 50 52 78 30 50Z" fill="'+b+'"/>':'')+'</svg>'}
-function mine(){let now=Date.now();if(now-(s.last||0)<Math.max(90,550-s.speed*45))return;s.last=now;let maxHp=10*Math.pow(1.48,s.index);s.hp-=s.damage;s.ore+=1;s.total+=1;if(s.hp<=0){s.index=Math.min(49,s.index+1);s.hp=10*Math.pow(1.48,s.index)}save();render()}
+function mine(){let now=Date.now();if(now-(s.last||0)<Math.max(90,550-s.speed*45))return;s.last=now;cooldownDuration=Math.max(90,550-s.speed*45);cooldownUntil=now+cooldownDuration;$("mineBtn").classList.remove("hit");void $("mineBtn").offsetWidth;$("mineBtn").classList.add("hit");let maxHp=10*Math.pow(1.48,s.index);s.hp-=s.damage;s.ore+=1;s.total+=1;if(s.hp<=0){s.index=Math.min(49,s.index+1);s.hp=10*Math.pow(1.48,s.index)}save();render()}
 $("mineBtn").addEventListener("click",mine);
 $("damageBtn").onclick=()=>{let c=Math.floor(10*Math.pow(1.72,s.damageLv));if(s.ore>=c){s.ore-=c;s.damageLv++;s.damage=Math.floor(1+Math.pow(s.damageLv+1,1.48));save();render()}};
 $("speedBtn").onclick=()=>{let c=Math.floor(15*Math.pow(1.8,s.speedLv));if(s.ore>=c){s.ore-=c;s.speedLv++;s.speed=s.speedLv;save();render()}};
 $("pickBtn").onclick=()=>{let c=Math.floor(30*Math.pow(3.1,s.pick));if(s.pick<9&&s.ore>=c){s.ore-=c;s.pick++;s.damage+=Math.max(1,s.pick*2);save();render()}};
+function updateCooldown(){let left=Math.max(0,cooldownUntil-Date.now());let active=left>0;$("cooldown").classList.toggle("active",active);if(active){let ratio=left/cooldownDuration;$("coolRing").style.strokeDashoffset=(163.36*(1-ratio));$("coolText").textContent=(left/1000).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+"s"}}
+setInterval(updateCooldown,40);
 render();
 </script></body></html>
