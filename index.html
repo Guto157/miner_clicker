@@ -11,8 +11,8 @@
 main{max-width:760px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;margin:4px 0 14px}.brand{font-weight:900;letter-spacing:1.5px;font-size:19px}.brand span{color:var(--gold)}.sub{font-size:11px;color:var(--muted);letter-spacing:2px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.stat,.panel{background:linear-gradient(145deg,#222d3c,#18212d);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 8px 22px #0003}.stat small{display:block;color:var(--muted);font-size:11px}.stat strong{font-size:clamp(16px,4vw,22px);font-variant-numeric:tabular-nums}
 .mine{padding:16px;text-align:center;position:relative;overflow:hidden}.stage-label{color:var(--muted);font-size:11px;letter-spacing:2px}.material-name{font-size:clamp(23px,6vw,32px);font-weight:900;margin:4px 0}.tier{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px}
-.rock-button{display:block;margin:12px auto 8px;width:min(62vw,230px);height:min(62vw,230px);max-height:230px;max-width:230px;border:0;background:transparent;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 14px 14px #0008);transition:transform .08s}.rock-button:active{transform:scale(.94)}.rock-button svg{width:100%;height:100%;overflow:visible}.hp-line{height:10px;background:#0d131c;border:1px solid #3b4757;border-radius:20px;overflow:hidden;margin:10px auto 5px;max-width:440px}.hp-fill{height:100%;width:100%;background:linear-gradient(90deg,#58bd82,#b4e477);transition:width .12s}.progress{color:var(--muted);font-size:12px}.pickaxe-wrap{display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0}.pickaxe-wrap svg{width:56px;height:56px}.pick-name{font-weight:800}.pick-info{font-size:11px;color:var(--muted)}
-.upgrades{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.upgrade{background:#202b39;border:1px solid #3a485a;border-radius:12px;padding:12px 7px;color:white;cursor:pointer;min-height:92px}.upgrade:disabled{opacity:.4;cursor:not-allowed}.upgrade b{display:block;font-size:14px}.upgrade small{display:block;color:var(--muted);font-size:10px;margin:4px 0}.cost{color:var(--gold);font-size:11px;font-weight:800}.section-title{font-size:13px;letter-spacing:1.4px;color:#b7c3d2;margin:16px 2px 8px}.materials{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.mat{background:#17212d;border:1px solid #2c394a;border-radius:9px;padding:7px 3px;text-align:center;min-width:0}.mat svg{width:36px;height:36px}.mat span{display:block;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#c5cfda}.mat.locked{filter:grayscale(1);opacity:.3}.mat.current{border-color:var(--gold);background:#3a3020}.foot{text-align:center;color:#728196;font-size:10px;margin:18px 0 6px}
+.rock-button{display:block;margin:12px auto 8px;width:min(62vw,230px);height:min(62vw,230px);max-height:230px;max-width:230px;border:0;background:transparent;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 14px 14px #0008);transition:transform .08s}.rock-button:active{transform:scale(.94)}.rock-button canvas{width:100%;height:100%;display:block;overflow:visible}.hp-line{height:10px;background:#0d131c;border:1px solid #3b4757;border-radius:20px;overflow:hidden;margin:10px auto 5px;max-width:440px}.hp-fill{height:100%;width:100%;background:linear-gradient(90deg,#58bd82,#b4e477);transition:width .12s}.progress{color:var(--muted);font-size:12px}.pickaxe-wrap{display:flex;align-items:center;justify-content:center;gap:10px;margin:8px 0}.pickaxe-wrap canvas{width:56px;height:56px}.pick-name{font-weight:800}.pick-info{font-size:11px;color:var(--muted)}
+.upgrades{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.upgrade{background:#202b39;border:1px solid #3a485a;border-radius:12px;padding:12px 7px;color:white;cursor:pointer;min-height:92px}.upgrade:disabled{opacity:.4;cursor:not-allowed}.upgrade b{display:block;font-size:14px}.upgrade small{display:block;color:var(--muted);font-size:10px;margin:4px 0}.cost{color:var(--gold);font-size:11px;font-weight:800}.section-title{font-size:13px;letter-spacing:1.4px;color:#b7c3d2;margin:16px 2px 8px}.materials{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.mat{background:#17212d;border:1px solid #2c394a;border-radius:9px;padding:7px 3px;text-align:center;min-width:0}.mat canvas{width:36px;height:36px}.mat span{display:block;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#c5cfda}.mat.locked{filter:grayscale(1);opacity:.3}.mat.current{border-color:var(--gold);background:#3a3020}.foot{text-align:center;color:#728196;font-size:10px;margin:18px 0 6px}
 @media(min-width:600px){body{padding:24px}.stats{gap:12px}.stat{padding:16px}.materials{grid-template-columns:repeat(10,1fr)}.upgrade{min-height:104px}}
 
 /* Upgrade visual */
@@ -38,7 +38,7 @@ body{background:radial-gradient(ellipse at 50% 0%,#405574 0,#202c3c 32%,#111923 
 .hp-fill{background:linear-gradient(90deg,#31a96e,#8ce58e,#e5d66f);box-shadow:0 0 12px #65e29a88}
 .progress{font-variant-numeric:tabular-nums}
 .pickaxe-wrap{background:#111a25a8;border:1px solid #43536a;border-radius:13px;padding:7px 12px;max-width:340px;margin:12px auto 0;box-shadow:inset 0 1px #ffffff0d}
-.pickaxe-wrap svg{filter:drop-shadow(0 3px 5px #0009)}
+.pickaxe-wrap canvas{filter:drop-shadow(0 3px 5px #0009)}
 .pick-name{font-size:14px}.pick-info{font-size:12px;color:#b9c9dc;margin-top:2px}
 .section-title{font-weight:900;color:#d5dfec;text-shadow:0 2px 8px #0008}
 .upgrade{position:relative;overflow:hidden;background:linear-gradient(150deg,#34465c,#202d3d 70%);border-color:#52677f;box-shadow:0 6px 14px #0003,inset 0 1px #ffffff15;transition:transform .12s,border-color .12s,filter .12s}
@@ -46,7 +46,7 @@ body{background:radial-gradient(ellipse at 50% 0%,#405574 0,#202c3c 32%,#111923 
 .upgrade b{font-size:14px;color:#f4f7fb}.upgrade small{line-height:1.35;min-height:27px}.cost{display:inline-block;margin-top:3px;padding:3px 6px;border-radius:6px;background:#6d54251c;color:#ffdc85}
 .upgrade:disabled{filter:saturate(.5);opacity:.48}
 .materials{gap:7px}.mat{background:linear-gradient(145deg,#243244,#151f2b);border-color:#3c4c60;box-shadow:0 3px 8px #0002;transition:transform .12s,border-color .12s}
-.mat svg{filter:drop-shadow(0 3px 3px #0008)}.mat.current{border-color:var(--gold);background:linear-gradient(145deg,#55472c,#2d2a24);box-shadow:0 0 13px #e5b94b22,inset 0 1px #fff2}
+.mat canvas{filter:drop-shadow(0 3px 3px #0008)}.mat.current{border-color:var(--gold);background:linear-gradient(145deg,#55472c,#2d2a24);box-shadow:0 0 13px #e5b94b22,inset 0 1px #fff2}
 .mat:not(.locked){opacity:1}.mat.locked{opacity:.26}
 .foot{padding:10px 0;border-top:1px solid #ffffff10}
 
@@ -83,7 +83,7 @@ main{max-width:820px}
 .hp-fill{background:linear-gradient(90deg,#31d28b,#b5ed76,#ffe17a);box-shadow:0 0 15px #70e9a9aa}
 .progress{font-size:11px;color:#d5e3f2;font-weight:700}
 .pickaxe-wrap{max-width:380px;margin:14px auto 0;padding:9px 15px;border-radius:16px;background:linear-gradient(145deg,#182638dd,#0d1724dd);border:1px solid #7189a4;box-shadow:inset 0 1px #ffffff24,0 7px 16px #0004}
-.pickaxe-wrap svg{width:66px;height:66px;filter:drop-shadow(0 4px 5px #000b)}
+.pickaxe-wrap canvas{width:66px;height:66px;filter:drop-shadow(0 4px 5px #000b)}
 .pick-name{font-size:15px;color:#fff0c2}
 .pick-info{font-size:11px}
 .section-title{margin-top:19px;font-size:12px;letter-spacing:1.7px;color:#e4edf8}
@@ -97,22 +97,22 @@ main{max-width:820px}
 .materials{gap:8px}
 .mat{position:relative;overflow:hidden;border-radius:12px;padding:7px 3px 8px;background:linear-gradient(145deg,#30465f,#142235);border:1px solid #526b86;box-shadow:0 5px 10px #0004,inset 0 1px #ffffff20}
 .mat:after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,#ffffff12,transparent 42%);pointer-events:none}
-.mat svg{width:42px;height:42px;filter:drop-shadow(0 4px 3px #0009)}
+.mat canvas{width:42px;height:42px;filter:drop-shadow(0 4px 3px #0009)}
 .mat span{font-size:9px;font-weight:800;color:#e1ebf6}
 .mat.current{border:1px solid #ffdf82;background:linear-gradient(145deg,#68542e,#2d2a25);box-shadow:0 0 0 1px #ffdf8244,0 0 18px #ffca4b55,inset 0 1px #fff5}
 .mat.locked{opacity:.2;filter:grayscale(1)}
 .foot{font-size:10px;color:#9aacc0}
-@media(max-width:380px){.stat{padding:11px 7px}.stat:before{margin:-11px -7px 8px}.upgrade{min-height:108px}.mat svg{width:36px;height:36px}}
+@media(max-width:380px){.stat{padding:11px 7px}.stat:before{margin:-11px -7px 8px}.upgrade{min-height:108px}.mat canvas{width:36px;height:36px}}
 
 
 /* Minérios em barras fundidas e picareta de mineração */
 .rock-button{width:min(78vw,300px);height:min(70vw,245px);max-width:300px;max-height:245px;border-radius:18px;background:radial-gradient(ellipse at 50% 55%,#0c1725 0,#101c2b 58%,transparent 72%);filter:drop-shadow(0 18px 16px #000b)}
 .rock-button:before{inset:8%;border-radius:20%;background:radial-gradient(ellipse,#ffffff0b,transparent 70%)}
 .rock-button svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 12px 8px #000a)}
-.pickaxe-wrap svg{width:88px;height:80px;overflow:visible;filter:drop-shadow(0 5px 6px #000b)}
-.mat svg{width:100%;height:55px;overflow:visible}
+.pickaxe-wrap canvas{width:88px;height:80px;overflow:visible;filter:drop-shadow(0 5px 6px #000b)}
+.mat canvas{width:100%;height:55px;display:block}
 .mat{padding:4px 2px 7px;background:linear-gradient(160deg,#30445b,#121d2b);border-color:#526981}
-@media(max-width:380px){.mat svg{height:47px}}
+@media(max-width:380px){.mat canvas{height:47px}}
 </style>
 </head>
 <body><main>
@@ -124,9 +124,9 @@ main{max-width:820px}
 </section>
 <section class="panel mine">
 <div class="stage-label">MATERIAL ATUAL</div><div class="material-name" id="materialName">Madeira</div><div class="tier" id="tier">Comum • Nível 1</div>
-<button class="rock-button" id="mineBtn" aria-label="Bater com a picareta para minerar"><svg id="rock" viewBox="0 0 220 220"></svg><div class="cooldown" id="cooldown"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26"/><circle class="ring" id="coolRing" cx="30" cy="30" r="26"/></svg><b id="coolText">0,55s</b></div></button>
+<button class="rock-button" id="mineBtn" aria-label="Bater com a picareta para minerar"><canvas id="rock" width="320" height="320"></canvas><div class="cooldown" id="cooldown"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="26"/><circle class="ring" id="coolRing" cx="30" cy="30" r="26"/></svg><b id="coolText">0,55s</b></div></button>
 <div class="hp-line"><div class="hp-fill" id="hpFill"></div></div><div class="progress" id="progress">Resistência: 10 / 10</div>
-<div class="pickaxe-wrap"><svg id="pickaxe" viewBox="0 0 180 165"></svg><div><div class="pick-name" id="pickName">Picareta de Madeira</div><div class="pick-info" id="pickInfo">Dano 1 • Velocidade normal</div></div></div>
+<div class="pickaxe-wrap"><canvas id="pickaxe" width="220" height="200"></canvas><div><div class="pick-name" id="pickName">Picareta de Madeira</div><div class="pick-info" id="pickInfo">Dano 1 • Velocidade normal</div></div></div>
 </section>
 <div class="section-title">MELHORIAS DA PICARETA</div>
 <section class="upgrades">
@@ -158,7 +158,7 @@ function svgPick(i){
  const rune=tier>=7?'<path d="M43 35L55 24 67 35 55 46Z" fill="none" stroke="#fff" stroke-width="2" opacity=".9"/><path d="M55 24V46" stroke="#fff" stroke-width="1.5"/>':'';
  return '<defs><linearGradient id="haft" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#24150f"/><stop offset=".25" stop-color="#9c633b"/><stop offset=".48" stop-color="#e0b27c"/><stop offset=".72" stop-color="#87502e"/><stop offset="1" stop-color="#28170f"/></linearGradient><linearGradient id="pickSteel" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#fff"/><stop offset=".18" stop-color="'+glow+'"/><stop offset=".42" stop-color="'+metal+'"/><stop offset=".76" stop-color="#34465b"/><stop offset="1" stop-color="#101722"/></linearGradient><linearGradient id="edgeLight" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="'+metal+'"/></linearGradient><filter id="pickShadow"><feGaussianBlur stdDeviation="3"/></filter></defs><ellipse cx="91" cy="144" rx="34" ry="8" fill="#000" opacity=".35" filter="url(#pickShadow)"/><g stroke-linejoin="round"><path d="M73 54L91 61 125 143 108 151Z" fill="#000" opacity=".4" transform="translate(3 3)"/><path d="M68 52L85 58 120 142 103 150Z" fill="url(#haft)" stroke="#24170f" stroke-width="4"/><path d="M80 81L96 87M90 105L106 111M101 130L116 136" stroke="#e6bd8e" stroke-width="3" opacity=".65"/><path d="M103 149L120 141" stroke="#29190f" stroke-width="6" stroke-linecap="round"/><path d="M27 56C38 29 58 19 83 25L119 35 145 24 137 51 119 64 88 53 70 54 52 76 34 72Z" fill="url(#pickSteel)" stroke="#172333" stroke-width="6"/><path d="M27 56C38 29 58 19 83 25L119 35 145 24 137 51 119 64 88 53 70 54 52 76 34 72Z" fill="none" stroke="'+glow+'" stroke-width="2" opacity=".82"/><path d="M35 51C48 31 64 27 83 32L117 42 141 29" fill="none" stroke="#fff" stroke-width="4" opacity=".8"/><path d="M35 67L51 68 70 47 88 47 119 58" fill="none" stroke="#09111c" stroke-width="5" opacity=".55"/><path d="M119 35L145 24 137 51 119 64 126 46Z" fill="#fff" opacity=".2"/><path d="M52 76L70 54 88 53 84 65 65 83Z" fill="'+metal+'" stroke="#182536" stroke-width="3"/><path d="M68 52L85 58 120 142" fill="none" stroke="#fff" stroke-width="2" opacity=".35"/>'+rune+'</g>';
 }
-function render(){let m=materials[s.index],maxHp=10*Math.pow(1.48,s.index);cooldownDuration=Math.max(90,550-s.speed*45);$("ore").textContent=fmt(s.ore);$("total").textContent=fmt(s.total);$("stage").textContent=(s.index+1)+" / 50";$("materialName").textContent=m[0];$("tier").textContent=(s.index<10?"Básico":s.index<20?"Valioso":s.index<30?"Raro":s.index<40?"Épico":"Lendário")+" • Nível "+(s.index+1);$("rock").innerHTML=svgRock(s.index);$("hpFill").style.width=Math.max(0,s.hp/maxHp*100)+"%";$("progress").textContent="Resistência: "+fmt(s.hp)+" / "+fmt(maxHp);$("pickaxe").innerHTML=svgPick(s.pick);$("pickName").textContent="Picareta "+pickaxes[s.pick][0];const tempo=Math.max(90,550-s.speed*45)/1000;$("pickInfo").textContent="Dano "+fmt(s.damage)+" • 1 toque a cada "+tempo.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+" s";let dc=Math.floor(10*Math.pow(1.72,s.damageLv)),sc=Math.floor(15*Math.pow(1.8,s.speedLv)),pc=Math.floor(30*Math.pow(3.1,s.pick));$("damageCost").textContent="Custo: "+fmt(dc)+" minério";$("speedCost").textContent="Custo: "+fmt(sc)+" minério";$("pickCost").textContent=s.pick===9?"Nível máximo":"Custo: "+fmt(pc)+" minério";$("damageBtn").disabled=s.ore<dc;$("speedBtn").disabled=s.ore<sc;$("pickBtn").disabled=s.pick===9||s.ore<pc;$("materials").innerHTML=materials.map((x,i)=>'<div class="mat '+(i>s.index?"locked":i===s.index?"current":"")+'">'+miniRock(i)+'<span>'+x[0]+'</span></div>').join("");}
+function renderOld(){let m=materials[s.index],maxHp=10*Math.pow(1.48,s.index);cooldownDuration=Math.max(90,550-s.speed*45);$("ore").textContent=fmt(s.ore);$("total").textContent=fmt(s.total);$("stage").textContent=(s.index+1)+" / 50";$("materialName").textContent=m[0];$("tier").textContent=(s.index<10?"Básico":s.index<20?"Valioso":s.index<30?"Raro":s.index<40?"Épico":"Lendário")+" • Nível "+(s.index+1);$("rock").innerHTML=svgRock(s.index);$("hpFill").style.width=Math.max(0,s.hp/maxHp*100)+"%";$("progress").textContent="Resistência: "+fmt(s.hp)+" / "+fmt(maxHp);$("pickaxe").innerHTML=svgPick(s.pick);$("pickName").textContent="Picareta "+pickaxes[s.pick][0];const tempo=Math.max(90,550-s.speed*45)/1000;$("pickInfo").textContent="Dano "+fmt(s.damage)+" • 1 toque a cada "+tempo.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+" s";let dc=Math.floor(10*Math.pow(1.72,s.damageLv)),sc=Math.floor(15*Math.pow(1.8,s.speedLv)),pc=Math.floor(30*Math.pow(3.1,s.pick));$("damageCost").textContent="Custo: "+fmt(dc)+" minério";$("speedCost").textContent="Custo: "+fmt(sc)+" minério";$("pickCost").textContent=s.pick===9?"Nível máximo":"Custo: "+fmt(pc)+" minério";$("damageBtn").disabled=s.ore<dc;$("speedBtn").disabled=s.ore<sc;$("pickBtn").disabled=s.pick===9||s.ore<pc;$("materials").innerHTML=materials.map((x,i)=>'<div class="mat '+(i>s.index?"locked":i===s.index?"current":"")+'">'+miniRock(i)+'<span>'+x[0]+'</span></div>').join("");}
 function miniRock(i){let [n,a,b]=materials[i];return '<svg viewBox="0 0 190 160"><defs><linearGradient id="miniTop'+i+'" x1="0" y1="0" x2="1" y2="1"><stop stop-color="'+b+'"/><stop offset="1" stop-color="'+a+'"/></linearGradient><linearGradient id="miniFace'+i+'" x1="0" y1="0" x2="0" y2="1"><stop stop-color="'+a+'"/><stop offset="1" stop-color="#101722"/></linearGradient></defs><path d="M22 62L68 30 167 48 121 82Z" fill="url(#miniTop'+i+')" stroke="#101722" stroke-width="4"/><path d="M22 62L121 82 121 132 22 111Z" fill="url(#miniFace'+i+')" stroke="#101722" stroke-width="4"/><path d="M121 82L167 48 167 99 121 132Z" fill="#111a27" stroke="#101722" stroke-width="4"/><path d="M30 63L69 37 155 52" fill="none" stroke="#fff" stroke-width="3" opacity=".5"/><path d="M35 72L112 88 112 119" fill="none" stroke="'+b+'" stroke-width="2" opacity=".55"/><path d="M45 92l15-5 9 4m34 18 8-3" stroke="#fff" stroke-width="2" opacity=".22"/>'+(i>=11?'<path d="M88 43L130 52 116 92 75 81Z" fill="'+b+'" stroke="#fff" stroke-opacity=".5" stroke-width="2"/><path d="M88 43L96 85 75 81Z" fill="#fff" opacity=".3"/>':'')+'<text x="76" y="105" font-size="12" font-weight="900" fill="'+b+'" opacity=".75">'+String(i+1).padStart(2,"0")+'</text></svg>'}
 function mine(){let now=Date.now();if(now-(s.last||0)<Math.max(90,550-s.speed*45))return;s.last=now;cooldownDuration=Math.max(90,550-s.speed*45);cooldownUntil=now+cooldownDuration;$("mineBtn").classList.remove("hit");void $("mineBtn").offsetWidth;$("mineBtn").classList.add("hit");let maxHp=10*Math.pow(1.48,s.index);s.hp-=s.damage;s.ore+=1;s.total+=1;if(s.hp<=0){s.index=Math.min(49,s.index+1);s.hp=10*Math.pow(1.48,s.index)}save();render()}
 $("mineBtn").addEventListener("click",mine);
@@ -167,5 +167,67 @@ $("speedBtn").onclick=()=>{let c=Math.floor(15*Math.pow(1.8,s.speedLv));if(s.ore
 $("pickBtn").onclick=()=>{let c=Math.floor(30*Math.pow(3.1,s.pick));if(s.pick<9&&s.ore>=c){s.ore-=c;s.pick++;s.damage+=Math.max(1,s.pick*2);save();render()}};
 function updateCooldown(){let left=Math.max(0,cooldownUntil-Date.now());let active=left>0;$("cooldown").classList.toggle("active",active);if(active){let ratio=left/cooldownDuration;$("coolRing").style.strokeDashoffset=(163.36*(1-ratio));$("coolText").textContent=(left/1000).toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+"s"}}
 setInterval(updateCooldown,40);
+
+function hexRGB(hex){return [parseInt(hex.slice(1,3),16),parseInt(hex.slice(3,5),16),parseInt(hex.slice(5,7),16)]}
+function grad(ctx,x1,y1,x2,y2,stops){let g=ctx.createLinearGradient(x1,y1,x2,y2);stops.forEach(s=>g.addColorStop(s[0],s[1]));return g}
+function poly(ctx,pts,fill,stroke="#111923",w=3){ctx.beginPath();ctx.moveTo(...pts[0]);pts.slice(1).forEach(p=>ctx.lineTo(...p));ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=w;ctx.stroke()}}
+function drawMaterial(canvas,i,mini=false){
+ const ctx=canvas.getContext("2d"),W=canvas.width,H=canvas.height;ctx.clearRect(0,0,W,H);ctx.save();ctx.scale(W/160,H/160);
+ const [name,b,h]=materials[i],base=hexRGB(b),hi=hexRGB(h),type=i<5?(i===0?"log":i===2?"sand":"rock"):i>=11?"crystal":"ingot";
+ ctx.shadowColor="#000b";ctx.shadowBlur=12;ctx.shadowOffsetY=9;
+ if(type==="ingot"){
+  poly(ctx,[[20,65],[48,39],[119,39],[143,61],[116,83],[37,83]],grad(ctx,35,40,130,88,[[0,h],[.45,b],[1,h]]));
+  ctx.shadowColor="transparent";
+  poly(ctx,[[20,65],[37,83],[116,83],[116,128],[23,111]],grad(ctx,25,70,30,130,[[0,b],[1,"#101722"]]));
+  poly(ctx,[[116,83],[143,61],[143,106],[116,128]],grad(ctx,118,60,145,125,[[0,b],[1,"#090e17"]]));
+  ctx.strokeStyle="#ffffff70";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(29,65);ctx.lineTo(50,45);ctx.lineTo(115,45);ctx.stroke();
+  ctx.strokeStyle="#ffffff38";ctx.beginPath();ctx.moveTo(34,91);ctx.lineTo(104,103);ctx.lineTo(104,119);ctx.stroke();
+  for(let k=0;k<26;k++){let x=28+(k*37+i*13)%110,y=58+(k*19+i*7)%55;ctx.fillStyle=k%2?"#ffffff22":"#00000022";ctx.fillRect(x,y,2+(k%3),1)}
+ }else if(type==="crystal"){
+  poly(ctx,[[80,13],[119,46],[137,96],[91,143],[43,120],[21,66],[51,31]],grad(ctx,25,20,130,140,[[0,h],[.5,b],[1,"#101322"]]));
+  poly(ctx,[[80,13],[82,77],[21,66],[51,31]],h,null);
+  poly(ctx,[[80,13],[119,46],[82,77]],"#ffffff88",null);
+  poly(ctx,[[82,77],[137,96],[91,143]],"#00000055",null);
+  poly(ctx,[[21,66],[82,77],[43,120]],"#ffffff30",null);
+  ctx.strokeStyle="#ffffff99";ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(51,31);ctx.lineTo(80,13);ctx.lineTo(119,46);ctx.stroke();
+  for(let k=0;k<7;k++){ctx.strokeStyle="#ffffff35";ctx.beginPath();ctx.moveTo(80,77);ctx.lineTo(34+k*14,45+k*9);ctx.stroke()}
+ }else if(type==="log"){
+  poly(ctx,[[22,48],[108,48],[139,68],[139,117],[48,117],[22,94]],grad(ctx,20,50,130,110,[[0,"#4a2817"],[.4,b],[1,"#24140d"]]));
+  ctx.beginPath();ctx.ellipse(115,82,23,34,0,0,Math.PI*2);ctx.fillStyle=h;ctx.fill();ctx.strokeStyle="#422516";ctx.lineWidth=4;ctx.stroke();
+  ctx.beginPath();ctx.ellipse(115,82,13,24,0,0,Math.PI*2);ctx.strokeStyle=b;ctx.lineWidth=4;ctx.stroke();
+  for(let y=62;y<110;y+=16){ctx.strokeStyle="#e7b77a88";ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(30,y);ctx.lineTo(91,y+4);ctx.stroke()}
+ }else{
+  poly(ctx,[[22,112],[43,64],[73,43],[104,56],[139,112]],grad(ctx,20,45,130,130,[[0,h],[.55,b],[1,"#111722"]]));
+  for(let k=0;k<55;k++){let x=28+(k*31+i*17)%105,y=58+(k*23+i*11)%55;ctx.fillStyle=k%3===0?h:"#ffffff40";ctx.fillRect(x,y,2+(k%3),2)}
+ }
+ if(i>=24){ctx.globalCompositeOperation="screen";ctx.shadowColor=h;ctx.shadowBlur=18;ctx.strokeStyle=h;ctx.lineWidth=1;ctx.beginPath();ctx.arc(80,80,52,0,Math.PI*2);ctx.stroke()}
+ ctx.restore()
+}
+function drawPick(canvas,i){
+ const c=canvas.getContext("2d");c.clearRect(0,0,canvas.width,canvas.height);c.save();c.scale(canvas.width/180,canvas.height/165);
+ let metal=pickaxes[i][1];c.shadowColor="#000b";c.shadowBlur=8;c.shadowOffsetY=6;
+ c.lineCap="round";c.lineJoin="round";c.strokeStyle="#27170e";c.lineWidth=21;c.beginPath();c.moveTo(78,54);c.lineTo(121,146);c.stroke();
+ c.strokeStyle=grad(c,72,50,115,145,[[0,"#e4b77d"],[.3,"#85502c"],[.65,"#c38b53"],[1,"#3a2115"]]);c.lineWidth=14;c.beginPath();c.moveTo(78,54);c.lineTo(121,146);c.stroke();
+ c.shadowColor="transparent";c.strokeStyle="#f0c99488";c.lineWidth=2;c.beginPath();c.moveTo(76,61);c.lineTo(113,137);c.stroke();
+ poly(c,[[25,57],[38,31],[76,23],[116,38],[151,22],[141,53],[119,69],[82,56],[62,82],[34,76]],grad(c,28,25,120,82,[[0,"#ffffff"],[.18,"#b8c5d1"],[.48,metal],[.78,"#35485c"],[1,"#101722"]]));
+ c.strokeStyle="#ffffffb0";c.lineWidth=3;c.beginPath();c.moveTo(31,53);c.lineTo(45,36);c.lineTo(75,29);c.lineTo(116,44);c.lineTo(148,25);c.stroke();
+ c.strokeStyle="#111a28";c.lineWidth=4;c.beginPath();c.moveTo(61,77);c.lineTo(81,53);c.lineTo(117,65);c.stroke();
+ if(i>5){c.shadowColor=metal;c.shadowBlur=14;c.fillStyle="#dffaff";c.beginPath();c.moveTo(84,32);c.lineTo(96,43);c.lineTo(84,54);c.lineTo(73,43);c.fill()}
+ c.restore()
+}
+function render(){
+ let m=materials[s.index],maxHp=10*Math.pow(1.48,s.index);cooldownDuration=Math.max(90,550-s.speed*45);
+ $("ore").textContent=fmt(s.ore);$("total").textContent=fmt(s.total);$("stage").textContent=(s.index+1)+" / 50";
+ $("materialName").textContent=m[0];$("tier").textContent=(s.index<10?"Básico":s.index<20?"Valioso":s.index<30?"Raro":s.index<40?"Épico":"Lendário")+" • Nível "+(s.index+1);
+ drawMaterial($("rock"),s.index);$("hpFill").style.width=Math.max(0,s.hp/maxHp*100)+"%";$("progress").textContent="Resistência: "+fmt(s.hp)+" / "+fmt(maxHp);
+ drawPick($("pickaxe"),s.pick);$("pickName").textContent="Picareta "+pickaxes[s.pick][0];const tempo=Math.max(90,550-s.speed*45)/1000;
+ $("pickInfo").textContent="Dano "+fmt(s.damage)+" • 1 toque a cada "+tempo.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2})+" s";
+ let dc=Math.floor(10*Math.pow(1.72,s.damageLv)),sc=Math.floor(15*Math.pow(1.8,s.speedLv)),pc=Math.floor(30*Math.pow(3.1,s.pick));
+ $("damageCost").textContent="Custo: "+fmt(dc)+" minério";$("speedCost").textContent="Custo: "+fmt(sc)+" minério";$("pickCost").textContent=s.pick===9?"Nível máximo":"Custo: "+fmt(pc)+" minério";
+ $("damageBtn").disabled=s.ore<dc;$("speedBtn").disabled=s.ore<sc;$("pickBtn").disabled=s.pick===9||s.ore<pc;
+ $("materials").innerHTML=materials.map((x,i)=>'<div class="mat '+(i>s.index?"locked":i===s.index?"current":"")+'"><canvas width="160" height="160" data-mat="'+i+'"></canvas><span>'+x[0]+'</span></div>').join("");
+ $("materials").querySelectorAll("canvas").forEach(cv=>drawMaterial(cv,Number(cv.dataset.mat),true));
+}
+
 render();
 </script></body></html>
